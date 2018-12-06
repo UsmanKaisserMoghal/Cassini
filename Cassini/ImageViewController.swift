@@ -55,8 +55,10 @@ class ImageViewController: UIViewController, UIScrollViewDelegate {
         if let url = imageURL {
             DispatchQueue.global(qos: .userInitiated).async { [weak self] in
                 let urlConents = try? Data(contentsOf: url)
-                if let imageData = urlConents {
-                    self?.image = UIImage(data:imageData)
+                DispatchQueue.main.async {
+                    if let imageData = urlConents {
+                        self?.image = UIImage(data:imageData)
+                    }
                 }
             }
         }
