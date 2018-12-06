@@ -53,9 +53,11 @@ class ImageViewController: UIViewController, UIScrollViewDelegate {
     
     private func fetchImage() {
         if let url = imageURL {
-            let urlConents = try? Data(contentsOf: url)
-            if let imageData = urlConents {
-                image = UIImage(data:imageData)
+            DispatchQueue.global(qos: .userInitiated).async {
+                let urlConents = try? Data(contentsOf: url)
+                if let imageData = urlConents {
+                    self.image = UIImage(data:imageData)
+                }
             }
         }
     }
