@@ -34,7 +34,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                         <state key="normal" title="Earth"/>
                                         <connections>
-                                            <segue destination="RRU-8t-TMD" kind="showDetail" identifier="Earth" id="sen-V1-5Vf"/>
+                                            <segue destination="RRU-8t-TMD" kind="showDetail" id="sen-V1-5Vf"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FS1-AI-YBy">
@@ -42,7 +42,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                         <state key="normal" title="Saturn"/>
                                         <connections>
-                                            <segue destination="RRU-8t-TMD" kind="showDetail" identifier="Saturn" id="Mq7-fK-eGp"/>
+                                            <segue destination="RRU-8t-TMD" kind="showDetail" id="Mq7-fK-eGp"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -72,18 +72,25 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PrO-UE-ZuZ">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                             </scrollView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="vA7-hZ-Xo8">
+                                <rect key="frame" x="169" y="414.66666666666669" width="37" height="37"/>
+                                <color key="color" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="PrO-UE-ZuZ" firstAttribute="top" secondItem="TaO-KS-f3I" secondAttribute="top" id="7pb-cM-FPl"/>
                             <constraint firstItem="PrO-UE-ZuZ" firstAttribute="leading" secondItem="TaO-KS-f3I" secondAttribute="leading" id="E38-IH-b9b"/>
                             <constraint firstAttribute="bottom" secondItem="PrO-UE-ZuZ" secondAttribute="bottom" id="Hr2-nc-RTr"/>
+                            <constraint firstItem="vA7-hZ-Xo8" firstAttribute="centerY" secondItem="rHI-xB-RQ3" secondAttribute="centerY" id="RQY-mC-WhF"/>
+                            <constraint firstItem="vA7-hZ-Xo8" firstAttribute="centerX" secondItem="rHI-xB-RQ3" secondAttribute="centerX" id="bEN-hD-JVd"/>
                             <constraint firstItem="PrO-UE-ZuZ" firstAttribute="trailing" secondItem="TaO-KS-f3I" secondAttribute="trailing" id="lpe-Uh-7BM"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="rHI-xB-RQ3"/>
                     </view>
                     <connections>
                         <outlet property="scrollView" destination="PrO-UE-ZuZ" id="F5k-4u-DEn"/>
+                        <outlet property="spinner" destination="vA7-hZ-Xo8" id="IAr-JS-da1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MQw-o9-IRV" userLabel="First Responder" sceneMemberID="firstResponder"/>
